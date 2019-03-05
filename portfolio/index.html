@@ -1,0 +1,72 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio - Anna Vagabova</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/hella.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <transition name="fade">
+        <div v-if="player.visible" id="player_container">
+            <div class="grid">
+                <div class="row">
+                    <div class="colum">
+                        <div id="back_button" v-on:click="showVideoList()">✕</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="youtube_player_container">
+                        <iframe id="youtube_player" width="900" height="500" v-bind:src="getEmbedURL(player.video)" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="row">
+                    <h1>{{player.video.title}}</h1>
+                </div>
+            </div>
+        </div>
+        </transition>
+        
+        <div v-if="!player.visible">
+            <div id="header" class="red_base">
+                <div class="grid">
+                    <div class="row">
+                        <div id="logo" class="column six">
+                            <a href="../index.html">ANNA VAGABOVA</a>
+                        </div>
+                        <div id="nav" class="column six">
+                            <a href="#" id="active">PORTFOLIO</a>
+                            <a href="../contact/index.html">CONTACT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row">
+                    <div class="column">
+                        <h3>PORTFOLIO</h3>
+                    </div>
+                </div>
+                <div v-for="i in Math.ceil(videos.length / 2)" class="row">
+                    <div v-for="item in videos.slice((i-1) * 2, i * 2)" class="column six">
+                        <transition name="fade">
+                        <div class="video_button" v-on:click="showVideoPlayer(item)">
+                            <img class="video_thumbnail" v-bind:src="getThumbnail(item)">
+                            <span class="video_title">{{item.title}}</span>
+                        </div>
+                    </transition>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/main.js"></script>
+</html>
