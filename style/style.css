@@ -81,9 +81,6 @@ body {
     width:100%;
     background:#1b1b1d;
     color:#FFF;
-    border-bottom-color:red;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
 }
 
 #header #nav {
