@@ -211,7 +211,6 @@ h3 {
     background-color: #1b1b1d;
     color:#FFF;
     padding:2rem;
-    margin-top:4rem;
 }
 
 #contact_container a {
@@ -219,6 +218,7 @@ h3 {
 }
 
 #contact_text {
+    padding-top:0rem;
     margin-bottom: 2rem;
 }
 
