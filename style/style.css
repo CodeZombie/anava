@@ -206,3 +206,25 @@ h3 {
 .fade-enter /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
 }
+
+#contact_container {
+    background-color: #1b1b1d;
+    color:#FFF;
+    padding:2rem;
+    margin-top:4rem;
+}
+
+#contact_container a {
+    color:#fff;
+}
+
+#contact_text {
+    margin-bottom: 2rem;
+}
+
+.social_icon{ 
+    text-align: center;
+}
+.social_icon:hover {
+    opacity: .5;
+}
