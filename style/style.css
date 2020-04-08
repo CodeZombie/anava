@@ -36,27 +36,7 @@ body {
     text-align: center;
     flex: 1;
     font-family: sans-serif;
-
-    -webkit-animation: 7s ease 0s normal forwards 1 fadein;
-    animation: 7s ease 0s normal forwards 1 fadein;
 }
-
-@keyframes fadein{
-    0% { opacity:0; }
-    66% { opacity:0; }
-    100% { opacity:1; }
-}
-
-@-webkit-keyframes fadein{
-    0% { opacity:0; }
-    66% { opacity:0; }
-    100% { opacity:1; }
-}
-
-.notransition {
-    -webkit-animation: none !important;
-    animation: none !important;
-  }
 
 #centered_box h1, #centered_box h2 {
     margin: 0px;

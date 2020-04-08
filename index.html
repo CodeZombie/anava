@@ -18,15 +18,12 @@
         <script>
             function onload() {
                 document.body.style.opacity='1';
-                document.body.addEventListener("click", () => {
-                    document.getElementById("centered_box").classList.add('notransition');
-                });
             }
         </script>
 </head>
 <body onload="onload()">
     <video autoplay muted loop id="background_video">
-        <source src="background.mp4" type="video/mp4">
+        <source src="background.webm" type="video/mp4">
     </video>
     <div id="flex_container">
         <div id="centered_box">
