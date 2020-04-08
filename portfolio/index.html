@@ -53,14 +53,30 @@
                         <h3>PORTFOLIO</h3>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="video_button" v-on:click="showVideoPlayer(primaryVideo)">
+                            <div class="video_thumbnail">
+                                <div>
+                                    <img v-bind:src="getThumbnail(primaryVideo)" style="overflow: hidden; width:100%;">
+                                </div>
+                            </div>
+                            <span class="video_title">{{primaryVideo.title}}</span>
+                        </div>
+                    </div>
+                </div>
                 <div v-for="i in Math.ceil(videos.length / 2)" class="row">
                     <div v-for="item in videos.slice((i-1) * 2, i * 2)" class="column six">
                         <transition name="fade">
-                        <div class="video_button" v-on:click="showVideoPlayer(item)">
-                            <img class="video_thumbnail" v-bind:src="getThumbnail(item)">
-                            <span class="video_title">{{item.title}}</span>
-                        </div>
-                    </transition>
+                            <div class="video_button" v-on:click="showVideoPlayer(item)">
+                                <div class="video_thumbnail">
+                                    <div>
+                                        <img v-bind:src="getThumbnail(item)" style="overflow: hidden; width:100%;">
+                                    </div>
+                                </div>
+                                <span class="video_title">{{item.title}}</span>
+                            </div>
+                        </transition>
                     </div>
                 </div>
             </div>

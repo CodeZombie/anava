@@ -1,16 +1,18 @@
 var app = new Vue({
     el: '#app',
     data: {
-      videos: [ {title: "Journey", id: "occNBvPCbBA"}, 
+        primaryVideo: {title: "Demo Reel 2020", id: "5OVF2vf5N3g"},
+
+        videos: [ {title: "Journey", id: "occNBvPCbBA"}, 
                 {title: "Happiness is inside", id: "KLVK7moIPU8"},
                 {title: "Music is my life", id: "Ok993rCKfy8"},
                 {title: "How to paint", id: "Ltys7M8rwq0"}
-      ],
-      player: {visible: false, video: null}
+        ],
+        player: {visible: false, video: null}
     },
     methods: {
         getThumbnail: function(video) {
-            return "https://img.youtube.com/vi/" + video.id + "/mqdefault.jpg"
+            return "https://img.youtube.com/vi/" + video.id + "/hqdefault.jpg"
         },
         getEmbedURL: function(video) {
             return "https://www.youtube.com/embed/" + this.player.video.id + "?&autoplay=1";
